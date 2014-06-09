@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def signed_in?
     identity_signed_in?
   end
+
+  def current_user
+    if signed_in?
+      current_identity.user
+    else
+      User.new
+    end
+  end
 end

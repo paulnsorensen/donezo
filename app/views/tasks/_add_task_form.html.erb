@@ -1,0 +1,15 @@
+<div class='container add-task'>
+  <%= form_for :task do |f| %>
+    <div class='row'>
+      <div class='col-md-10'>
+        <%= f.text_field :name,
+                         maxlength: 255,
+                         class: 'form-control input-lg',
+                         placeholder: 'What did you do?' %>
+      </div>
+      <div class='col-md-2'>
+        <%= submit_tag 'Add', class: 'btn btn-danger btn-lg' %>
+      </div>
+    </div>
+  <% end %>
+</div>

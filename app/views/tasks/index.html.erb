@@ -1,1 +1,21 @@
 <%= render 'layouts/header' %>
+
+<%= render 'add_task_form' %>
+
+<hr>
+
+<%= render 'task_controls', query: @query %>
+
+<div class='container'>
+  <table class='table'>
+    <tr>
+      <th>Task</th><th>Date Completed</th>
+    </tr>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.done_at.strftime('%F at %H:%M UTC') %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

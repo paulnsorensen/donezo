@@ -1,0 +1,20 @@
+<div class='container'>
+  <div class='navbar task-controls'>
+    <%= form_tag '/tasks',
+                 method: 'get',
+                 class: 'navbar-form navbar-left',
+                 role: 'search' do %>
+
+
+        <div class='form-group'>
+          <%= text_field_tag :query,
+                             query,
+                             class: 'form-control',
+                             placeholder: 'Keywords',
+                             size: 40 %>
+        </div>
+
+        <%= submit_tag 'Search', class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
