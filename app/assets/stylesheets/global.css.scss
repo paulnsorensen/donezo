@@ -1,0 +1,21 @@
+* { font-family: 'Open Sans', sans-serif; }
+
+.logo {
+  font-weight: 300;
+  font-family: 'Oswald', sans-serif;
+
+  strong {
+    font-size: 95%;
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+.navbar {
+  background-color: #3499DB;
+  border-color: #467FA4;
+
+  .logo {
+    margin: 0 4px;
+    font-size: 25px;
+  }
+}
