@@ -1,0 +1,17 @@
+<%= render 'layouts/header' %>
+
+<div class="container theme-showcase" role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <h1>Welcome to DoneZo</h1>
+    <p>A done list for teams</p>
+    <p>
+      <%= link_to 'Sign up',
+          new_identity_registration_path,
+            class: 'btn btn-primary btn-lg',
+            role: 'button'
+       %>
+    </p>
+  </div>
+</div>
