@@ -1,5 +1,7 @@
 * { font-family: 'Open Sans', sans-serif; }
 
+body { padding-top: 70px; }
+
 .logo {
   font-weight: 300;
   font-family: 'Oswald', sans-serif;
@@ -10,7 +12,7 @@
   }
 }
 
-.navbar {
+.navbar.header {
   background-color: #3499DB;
   border-color: #467FA4;
 

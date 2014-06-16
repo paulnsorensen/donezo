@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'User authentication', type: :feature do
-  it 'logs in a user' do
+feature 'User authentication', type: :feature do
+  scenario 'logs in a user' do
     create_identity
 
     visit root_path
@@ -15,8 +15,8 @@ describe 'User authentication', type: :feature do
     expect(current_path).to eql(tasks_path)
   end
 
-  it 'logs out a user' do
-    login_as(create_identity, scope: :identity)
+  scenario 'logs out a user' do
+    login
 
     visit root_path
 
@@ -25,7 +25,7 @@ describe 'User authentication', type: :feature do
     expect(current_path).to eql(root_path)
   end
 
-  it 'allows a user to sign up' do
+  scenario 'allows a user to sign up' do
     visit root_path
 
     click_link 'Sign up'
@@ -36,13 +36,5 @@ describe 'User authentication', type: :feature do
     click_button 'Sign up'
 
     expect(current_path).to eql(tasks_path)
-  end
-
-  def create_identity
-    Identity.create!(
-      email: 'foo@bar.com',
-      password: 'password132',
-      password_confirmation: 'password132'
-    )
   end
 end
