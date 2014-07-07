@@ -25,6 +25,12 @@ class TasksController < ApplicationController
     save_task(task)
   end
 
+  def send_task_list
+    UserMailer.task_list(current_user).deliver
+
+    redirect_to action: :index
+  end
+
   private
 
   def task_params

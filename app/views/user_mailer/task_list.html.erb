@@ -1,0 +1,13 @@
+<h2>Your task list | DONEZO<h2>
+
+<table class='table'>
+  <tr>
+    <th>Task</th><th>Date Completed</th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= task.done_at.strftime('%F at %H:%M UTC') %></td>
+    </tr>
+  <% end %>
+</table>
