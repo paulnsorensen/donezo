@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :tasks, except: [:new]
-
+  resources :tasks, except: [:new] do
+    post 'send_task_list', on: :collection
+  end
 end

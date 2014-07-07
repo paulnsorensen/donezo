@@ -24,4 +24,12 @@ feature 'Tasks', type: :feature do
     expect(page.body).to include('task 1')
     expect(page.body).to_not include('task 2')
   end
+
+  scenario 'emailing tasks' do
+    Task.create!(user: user, name: 'I completed task 1', done_at: Time.now)
+
+    visit tasks_path
+
+    expect { click_button 'Email Tasks' }.to change(ActionMailer::Base.deliveries, :count).by(1)
+  end
 end

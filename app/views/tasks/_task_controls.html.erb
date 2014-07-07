@@ -16,5 +16,13 @@
 
         <%= submit_tag 'Search', class: 'btn btn-success' %>
     <% end %>
+
+    <%= form_tag '/tasks/send_task_list',
+                method: 'post',
+                class: 'navbar-form navbar-right',
+                role: 'email' do %>
+
+      <%= submit_tag 'Email Tasks', class: 'btn btn-default' %>
+    <% end %>
   </div>
 </div>

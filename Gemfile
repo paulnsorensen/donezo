@@ -12,7 +12,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'pg'
-gem 'interactor-rails', '~> 1.0'
 gem 'devise'
 
 group :development, :test do
@@ -24,3 +23,5 @@ end
 group :test do
   gem 'shoulda-matchers', require: false
 end
+
+gem 'recipient_interceptor'
