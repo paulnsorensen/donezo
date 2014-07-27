@@ -13,6 +13,7 @@ gem 'spring',        group: :development
 
 gem 'pg'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

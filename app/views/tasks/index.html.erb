@@ -15,6 +15,7 @@
       <tr>
         <td><%= task.name %></td>
         <td><%= task.done_at.strftime('%F at %H:%M UTC') %></td>
+        <td><%= render 'delete_task', task: task %></td>
       </tr>
     <% end %>
   </table>

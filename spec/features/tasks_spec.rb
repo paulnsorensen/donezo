@@ -30,6 +30,15 @@ feature 'Tasks', type: :feature do
 
     visit tasks_path
 
-    expect { click_button 'Email Tasks' }.to change(ActionMailer::Base.deliveries, :count).by(1)
+    expect { click_button 'Delete' }.to change(Task, :count).by(-1)
+  end
+
+  scenario 'deleting a task' do
+    Task.create!(user: user, name: 'I completed task 1', done_at: Time.now)
+    deliveries = ActionMailer::Base.deliveries
+
+    visit tasks_path
+
+    expect { click_button 'Email Tasks' }.to change(deliveries, :count).by(1)
   end
 end
